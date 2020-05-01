@@ -71,9 +71,12 @@
     "webpack": "webpack -d --watch --config ./webpack/webpack.dev.js --display-error-details",
     "build-webpack": "webpack -p --config ./webpack/webpack.prod.js --display-error-details",
     "build": "npm run build-babel & npm run build-webpack",
-    "develop": "concurrently --raw \"npm run webpack\" \"npm run babel\" \"npm run storybook\""
+    "develop": "concurrently --raw \"npm run webpack\" \"npm run babel\" \"npm run storybook\"",
+    "wp": "webpack -d --watch --config ./webpack/webpack.dev.js --display-error-details"
   },
   "devDependencies": {
-    "@storybook/addon-viewport": "^5.3.13"
+    "@storybook/addon-viewport": "^5.3.13",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2"
   }
 }
