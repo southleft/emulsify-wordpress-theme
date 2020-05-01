@@ -77,7 +77,6 @@
   "devDependencies": {
     "@storybook/addon-viewport": "^5.3.13",
     "browser-sync": "^2.26.7",
-    "browser-sync-webpack-plugin": "^2.2.2",
-    "html-webpack-plugin": "^4.2.1"
+    "browser-sync-webpack-plugin": "^2.2.2"
   }
 }
