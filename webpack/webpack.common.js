@@ -10,6 +10,7 @@ module.exports = {
   entry: {
     svgSprite: path.resolve(webpackDir, 'svgSprite.js'),
     css: path.resolve(webpackDir, 'css.js'),
+    scripts: path.resolve(rootDir, 'scripts/main.js')
   },
   module: {
     rules: [loaders.SVGSpriteLoader, loaders.CSSLoader, loaders.ImageLoader],
@@ -20,9 +21,11 @@ module.exports = {
     plugins.MiniCssExtractPlugin,
     plugins.ProgressPlugin,
     plugins.CleanWebpackPlugin,
+    plugins.BrowserSyncPlugin
   ],
   output: {
     path: distDir,
-    filename: 'remove/[name].js',
+    filename: 'js/[name].js',
+    sourceMapFilename: '[file].map'
   },
 };

@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const _MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const _ImageminPlugin = require('imagemin-webpack-plugin').default;
 const _SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const _BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const glob = require('glob');
 
 const imagePath = path.resolve(__dirname, '../images');
@@ -28,13 +29,28 @@ const SpriteLoaderPlugin = new _SpriteLoaderPlugin({
 
 const ProgressPlugin = new webpack.ProgressPlugin();
 
+const BrowserSyncPlugin = new _BrowserSyncPlugin({
+  host: 'localhost',
+  port: 4000,
+  proxy: 'http://emulsify.test/',
+  injectCss: true,
+  files: [
+    '**/*.twig', 
+    '**/*.css', 
+    '**/*.yml', 
+    '**/*.js',
+    '**/*.php',
+    ]
+});
+
 module.exports = {
   ProgressPlugin,
   MiniCssExtractPlugin,
   ImageminPlugin,
   SpriteLoaderPlugin,
+  BrowserSyncPlugin,
   CleanWebpackPlugin: new CleanWebpackPlugin({
     cleanOnceBeforeBuildPatterns: [],
-    cleanAfterEveryBuildPatterns: ['remove/**', '!js'],
-  }),
+    cleanAfterEveryBuildPatterns: ['js/**', '!js'],
+  })
 };

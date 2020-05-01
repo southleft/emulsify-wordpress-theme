@@ -15,10 +15,15 @@ const CSSLoader = {
     MiniCssExtractPlugin.loader,
     {
       loader: 'css-loader',
+      options: {
+          sourceMap: true,
+          importLoaders: 2
+        },
     },
     {
       loader: 'postcss-loader',
       options: {
+        sourceMap: true,
         config: {
           path: path.resolve('./webpack/'),
         },
@@ -27,9 +32,11 @@ const CSSLoader = {
     {
       loader: 'sass-loader',
       options: {
+        sourceMap: true,
         sassOptions: {
           importer: globImporter(),
-          outputStyle: 'compressed',
+          outputStyle: 'expanded',
+          sourceMap: true,
         },
       },
     },
