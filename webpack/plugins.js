@@ -7,6 +7,7 @@ const _ImageminPlugin = require('imagemin-webpack-plugin').default;
 const _SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const _BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const glob = require('glob');
+
 const imagePath = path.resolve(__dirname, '../images');
 
 const MiniCssExtractPlugin = new _MiniCssExtractPlugin({
