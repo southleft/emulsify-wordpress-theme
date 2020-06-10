@@ -1,0 +1,19 @@
+.l-wrap {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+.l-container {
+  max-width: $container-width;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.l-container--xl {
+  max-width: $container-width-xl;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}

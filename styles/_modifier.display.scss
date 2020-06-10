@@ -1,0 +1,79 @@
+/* ------------------------------------ *\
+    $DISPLAY STATES
+\* ------------------------------------ */
+
+/**
+ * Display Classes
+ */
+.u-display--inline-block {
+  display: inline-block;
+}
+
+.u-display--block {
+  display: block;
+}
+
+.u-display--block--imp {
+  display: block !important;
+}
+
+.u-flex {
+  display: flex;
+}
+
+.u-justify-content--space-between {
+  justify-content: space-between;
+}
+
+.u-justify-content--flex-end {
+  justify-content: flex-end;
+}
+
+.u-align-items--center {
+  align-items: center;
+}
+
+.u-flex-directon--column {
+  flex-direction: column;
+}
+
+// Specific Widths - visible greater than #
+.u-hide--sm-up {
+  @include screen-sm-up {
+    display: none;
+  }
+}
+
+.u-hide--md-up {
+  @include screen-md-up {
+    display: none;
+  }
+}
+
+.u-hide--lg-up {
+  @include screen-lg-up {
+    display: none;
+  }
+}
+
+.u-hide--xl-up {
+  @include screen-lg-up {
+    display: none;
+  }
+}
+
+.u-position-relative {
+  position: relative;
+}
+
+.u-position-absolute {
+  position: absolute;
+}
+
+.u-text-align--right {
+  text-align: right;
+}
+
+.u-opacity--0 {
+  opacity: 0;
+}

@@ -1,0 +1,83 @@
+$screen-xs: 320px !default;
+$screen-sm: 414px !default;
+$screen-md: 768px !default;
+$screen-lg: 1024px !default;
+$screen-xl: 1200px !default;
+$screen-xxl: 1400px !default;
+
+/* MIN WIDTHS */
+@mixin screen-sm-up {
+  @media (min-width: $screen-sm) {
+      @content;
+  }
+}
+
+@mixin screen-md-up {
+  @media (min-width: $screen-md + 1) {
+      @content;
+  }
+}
+
+@mixin screen-lg-up {
+  @media (min-width: $screen-lg) {
+      @content;
+  }
+}
+
+@mixin screen-xl-up {
+  @media (min-width: $screen-xl) {
+      @content;
+  }
+}
+
+@mixin screen-xxl-up {
+  @media (min-width: $screen-xxl) {
+      @content;
+  }
+}
+
+/* MAX WIDTHS */
+// SMALLEST SCREEN TWEAKS
+@mixin screen-xs-only {
+  @media (max-width: $screen-xs) {
+      @content;
+  }
+}
+
+@mixin screen-sm-down {
+  @media (max-width: $screen-sm) {
+      @content;
+  }
+}
+
+@mixin screen-md-down {
+  @media (max-width: $screen-md) {
+      @content;
+  }
+}
+
+/* MIN-MAX WIDTHS */
+@mixin screen-md-only {
+  @media (min-width: $screen-md + 1) and (max-width: $screen-lg - 1) {
+      @content;
+  }
+}
+
+@mixin screen-lg-only {
+  @media (min-width: $screen-lg) and (max-width: $screen-xl - 1) {
+      @content;
+  }
+}
+
+@mixin screen-xl-only {
+  @media (min-width: $screen-xl) and (max-width: $screen-xxl - 1) {
+      @content;
+  }
+}
+
+// Retina screens have a 1.5 pixel ratio, not 2
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio : 1.5), (min-device-pixel-ratio : 1.5) {
+      @content;
+  }
+}

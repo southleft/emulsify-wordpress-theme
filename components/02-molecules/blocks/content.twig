@@ -1,0 +1,14 @@
+{% if content.type == 'callout' %}
+  <div class="c-callout {{ content.modifiers }}" bp="grid {{ content.grid_modifiers }}">
+    {% if content.image %}
+    <div class="c-callout-image" bp="{{ content.col }}">
+      <img class="o-image" src="{{ image_path }}/{{ content.image }}" alt="{{ content.image_alt }}">
+    </div>
+    {% endif %}
+    <div class="" bp="{{ content.col }}">
+      {% include "@atoms/text/heading.twig" %}
+    </div>
+  </div>
+{% else %}
+
+{% endif %}

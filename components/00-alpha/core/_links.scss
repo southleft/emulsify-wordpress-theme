@@ -1,0 +1,17 @@
+/* ------------------------------------ *\
+    $LINKS
+\* ------------------------------------ */
+
+a {
+  text-decoration: none;
+  color: $c-link-color;
+
+  &:active {
+    border: none;
+    outline: none;
+  }
+
+  &:hover {
+    color: $c-link-hover-color;
+  }
+}

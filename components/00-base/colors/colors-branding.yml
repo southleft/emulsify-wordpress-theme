@@ -1,0 +1,9 @@
+items:
+  - name: 'Periwinkle'
+    value: 'periwinkle'
+  - name: 'Wintermint'
+    value: 'wintermint'
+  - name: 'Blue'
+    value: 'blue'
+  - name: 'Blue - Alt'
+    value: 'blue--alt'

@@ -7,6 +7,7 @@ const _ImageminPlugin = require('imagemin-webpack-plugin').default;
 const _SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const _BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const glob = require('glob');
+
 const imagePath = path.resolve(__dirname, '../images');
 
 const MiniCssExtractPlugin = new _MiniCssExtractPlugin({
@@ -31,7 +32,7 @@ const ProgressPlugin = new webpack.ProgressPlugin();
 const BrowserSyncPlugin = new _BrowserSyncPlugin({
   host: 'localhost',
   port: 4000,
-  proxy: 'http://emulsify.test/',
+  proxy: 'http://p72.test/',
   injectCss: true,
   files: [
     '**/*.twig', 

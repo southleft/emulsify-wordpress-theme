@@ -1,38 +1,16 @@
 {% set header__base_class = 'header' %}
-{# If `directory` is defined, set the path relative for Wordpress.
- # Otherwise, set the path relative to the Component Library. #}
-{% set header__logo_src = directory ? '/' ~ directory ~ '/images/logo.png' : 'images/logo.png' %}
-
-<header {{ bem(header__base_class) }}>
-  <div {{ bem('inner', [], header__base_class) }}>
-    <div {{ bem('primary', [], header__base_class) }}>
-      <div {{ bem('branding', [], header__base_class) }}>
-        {% block header__branding %}
-          {% embed "@atoms/links/link/link.twig" with {
-            link_base_class: 'logo-link',
-            link_url: logo_link__url|default('/'),
-          } %}
-            {% block link_content %}
-              {% include "@atoms/images/image/responsive-image.twig" with {
-                output_image_tag: true,
-                image_src: header__logo_src,
-                image_alt: 'Logo',
-                responsive_image_blockname: 'logo',
-              } %}
-            {% endblock %}
-          {% endembed %}
-        {% endblock %}
-      </div>
-      <div {{ bem('menu', [], header__base_class) }}>
-        {% block header__menu %}
-          {% include "@molecules/menus/main-menu/main-menu.twig" %}
-        {% endblock %}
-      </div>
+<header class="c-site-header {{ on_dark }}">
+  <div class="l-container--xl c-site-header__inner">
+    <div class="c-site-header__logo">
+      {% include "@atoms/images/logos/p72.twig" %}
     </div>
-    <div {{ bem('secondary', [], header__base_class) }}>
-      {% block header__breadcrumbs %}
-        {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" %}
-      {% endblock %}
+    <div class="c-site-header__menu">
+     <div class="c-icon c-icon--search {{ icon_fill }}">
+        {% include "@atoms/icons/search.twig" %}
+      </div>
+      <div class="c-icon c-icon--menu {{ icon_fill }}">
+        {% include "@atoms/icons/menu.twig" %}
+      </div>
     </div>
   </div>
 </header>

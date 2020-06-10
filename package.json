@@ -1,8 +1,8 @@
 {
-  "name": "emulsify-wordpress-theme",
-  "version": "1.0.0-alpha",
-  "description": "Emulsify is a Design System that works with WordPress, Drupal, React, and more.",
-  "author": "Dean Oest <randy@fourkitchens.com>",
+  "name": "p72-wp-theme",
+  "version": "1.0.0",
+  "description": "WP theme for Point72 Hyperscale based on the Emulsify WP Theme",
+  "author": "Southleft",
   "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.6.4",
@@ -46,9 +46,10 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "sass-loader": "^8.0.0",
-    "stylelint": "^12.0.0",
+    "stylelint": "^13.5.0",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^19.0.0",
+    "stylelint-scss": "^3.17.2",
     "stylelint-webpack-plugin": "^1.0.2",
     "svg-sprite-loader": "^4.1.6",
     "twig": "~1.13.3",
@@ -77,8 +78,6 @@
   "devDependencies": {
     "@storybook/addon-viewport": "^5.3.13",
     "browser-sync": "^2.26.7",
-    "browser-sync-webpack-plugin": "^2.2.2",
-    "html-webpack-plugin": "^4.2.1",
-    "webpack-dev-server": "^3.10.3"
+    "browser-sync-webpack-plugin": "^2.2.2"
   }
 }

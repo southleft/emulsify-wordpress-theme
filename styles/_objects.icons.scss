@@ -1,0 +1,47 @@
+/* ------------------------------------ *\
+    $ICONS
+\* ------------------------------------ */
+
+/**
+ * Icon Sizing
+ */
+.o-icon {
+  display: inline-block;
+}
+
+.u-icon--xs {
+  width: $icon-xsmall;
+  height: $icon-xsmall;
+}
+
+.u-icon--s {
+  width: $icon-small;
+  height: $icon-small;
+}
+
+.u-icon--m {
+  width: $icon-medium;
+  height: $icon-medium;
+}
+
+.u-icon--l {
+  width: $icon-large;
+  height: $icon-large;
+}
+
+.u-icon--xl {
+  width: $icon-xlarge;
+  height: $icon-xlarge;
+}
+
+.o-share-list a:hover {
+  transition: none;
+
+  svg path {
+    fill: white;
+  }
+
+  .o-share-icon {
+    background: $c-link-hover-color;
+  }
+}

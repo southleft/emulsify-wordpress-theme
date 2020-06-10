@@ -2,9 +2,18 @@
 @import '~normalize.css/normalize';
 @import '~breakpoint-sass/stylesheets/breakpoint';
 
+// INITIALIZE & PRIORITIZE CSS
+@import '00-alpha/01-variables';
+@import '00-alpha/02-breakpoints';
+@import '00-alpha/03-mixins';
+@import '00-alpha/04-base';
+
 // Components
 @import '00-base/**/*.scss';
 @import '01-atoms/**/*.scss';
 @import '02-molecules/**/*.scss';
 @import '03-organisms/**/*.scss';
 @import '04-templates/**/*.scss';
+
+// CALL THIS LAST FOR OVERRIDES
+@import '00-alpha/05-utility';

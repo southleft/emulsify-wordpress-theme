@@ -1,0 +1,115 @@
+
+@mixin margin-auto-sides {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin p72-icon( $w: 85px, $h: 85px, $c: $c-white) {
+  width: $w;
+  height: $h;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid $c;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-spread {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:last-child {
+    display: inline-flex;
+    justify-content: flex-end;
+  }
+}
+
+@mixin p {
+  line-height: 1.5;
+  font-family: $ff-font;
+  font-size: $body-font-size;
+
+  @media print {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+}
+
+/**
+ * String interpolation function for SASS variables in SVG Image URIs
+ */
+@function url-friendly-color($color) {
+  @return "%23" + str-slice("#{$color}", 2, -1);
+}
+
+// Mixin - Standard Margin
+@mixin margin {
+  margin-bottom: 1em;
+}
+
+@mixin no-bottom {
+  margin-bottom: 0;
+}
+
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * General Mixins (put specific ones in component files where applicable)
+*/
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+$outer-container-break: $small;
+
+/// Mixin - Wrapper
+/// Outer container mixin for large screens
+@mixin wrapper(
+  $container-max-width: $max-width,
+  $outer-container-break: $small,
+  $v-margin: 0,
+  $v-padding: 0,
+  $h-padding: $space,
+  $h-padding-large: $h-padding
+) {
+  max-width: #{$container-max-width};
+  width: 100%;
+  margin: #{$v-margin} auto;
+  padding: #{$v-padding} #{$h-padding};
+
+  @include breakpoint($outer-container-break) {
+    padding: #{$v-padding} #{$h-padding-large};
+  }
+
+  @include breakpoint($container-max-width) {
+    padding-left:
+      calc(
+        #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
+      );
+    padding-right:
+      calc(
+        #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
+      );
+  }
+}

@@ -3,6 +3,7 @@ import React from 'react';
 import image from './image/responsive-image.twig';
 import figure from './image/figure.twig';
 import iconTwig from './icons/icons.twig';
+import p72logo from './logos/p72.twig';
 
 import imageData from './image/image.yml';
 import figureData from './image/figure.yml';
@@ -22,3 +23,9 @@ export const figures = () => (
 export const icons = () => (
   <div dangerouslySetInnerHTML={{ __html: iconTwig(iconData) }} />
 );
+
+export const logos = () => (
+  <div dangerouslySetInnerHTML={{ __html: p72logo() }} />
+);
+
+

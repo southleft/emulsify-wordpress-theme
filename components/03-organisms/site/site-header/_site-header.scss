@@ -1,22 +1,41 @@
-.header {
-  margin-bottom: 4em;
+.c-site-header {
+  margin-top: $space-1;
+  padding-left: $space-1;
+  padding-right: $space-1;
+
+  &.on-dark {
+    .c-icon {
+      @include p72-icon(65px,65px, $c-white);
+
+      transition: $transition-all;
+
+      &--search {
+        @include p72-icon(65px,65px, transparent);
+      }
+    }
+
+    .c-icon:hover {
+      background-color: $c-white;
+      fill: $c-blue;
+      cursor: pointer;
+    }
+
+    .c-icon--search:hover {
+      background-color: $c-blue;
+    }
+  }
 
   &__inner {
-    @include wrapper;
-
     display: flex;
-    flex-flow: column nowrap;
   }
 
-  &__primary {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    padding: $space 0;
+  &__logo {
+    @include flex-center;
+
+    flex-grow: 1;
   }
 
-  &__branding {
-    margin-right: $space;
-    max-width: 300px;
+  &__menu {
+    flex-shrink: 1;
   }
 }

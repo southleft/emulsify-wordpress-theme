@@ -1,0 +1,186 @@
+/* ------------------------------------ *\
+    $VARIABLES
+\* ------------------------------------ */
+
+/**
+ * Grid & Baseline Setup
+ */
+// Global
+$max-width: 1200px;
+$max-width-xl: 1600px;
+
+// Grid
+$grid-columns: 12;
+$col-width: 65px;
+$gutter: 20px;
+
+/**
+ * Theme Colors
+ */
+
+// BRAND
+ $c-periwinkle: #6d99c8;
+ $c-wintermint: #57ccd2;
+ $c-blue: #14295e;
+ $c-blue--alt: #203274;
+
+// Neutrals
+$c-white: #fff;
+$c-white-trans: rgba(255, 255, 255, 0.8);
+$c-beige: #f8f7f6;
+$c-grey: #454545;
+$c-gray: $c-grey;
+$c-grey--dark: #252525;
+$c-gray--dark: $c-grey--dark;
+$c-grey--light: #aaa;
+$c-gray--light: $c-grey--light;
+$c-black: #111;
+
+$c-primary: $c-periwinkle;
+$c-secondary: $c-blue;
+$c-secondary--alt: $c-blue--alt;
+$c-tertiary: $c-wintermint;
+
+/**
+ * Default Colors
+ */
+$c-error: #f00;
+$c-valid: #089e00;
+$c-warning: #fff664;
+$c-information: #000db5;
+$c-overlay: rgba($c-black, 0.8);
+
+/**
+ * Style Colors
+ */
+
+$c-body-color: $c-black;
+$c-link-color: $c-primary;
+//$c-link-hover-color: darker($c-primary, 10%);
+$c-link-hover-color: $c-primary;
+$c-button-primary: $c-primary;
+//$c-button-primary-hover: darker($c-primary, 10%);
+$c-button-primary-hover: $c-blue;
+$c-button-secondary: $c-secondary;
+$c-button-secondary-hover: $c-primary;
+$c-border: $c-gray;
+
+/**
+ * Typography
+ */
+$ff-font: 'Helvetica', sans-serif;
+$ff-font--sans: $ff-font;
+$ff-font--serif: 'NeueMachina', Menlo, Monaco, 'Courier New', 'Courier', monospace;
+$ff-font--monospace: 'NeueMachina', Menlo, Monaco, 'Courier New', 'Courier', monospace;
+
+// Theme typefaces
+$ff-font--primary: $ff-font;
+$ff-font--secondary: $ff-font--serif;
+
+/**
+ * Icons
+ */
+$icon-xsmall: 15px;
+$icon-small: 20px;
+$icon-medium: 30px;
+$icon-large: 40px;
+$icon-xlarge: 70px;
+
+/**
+ * Common Breakpoints
+ */
+$xsmall: 415px; // iPhone portrait  < xsmall
+$small: 640px;
+$medium: 768px; // iPad portrait = medium
+$large: 1024px;
+$xlarge: 1200px;
+$xxlarge: 1400px;
+$xxxlarge: 1600px;
+
+$breakpoints: ("xsmall": $xsmall, "small": $small, "medium": $medium, "large": $large, "xlarge": $xlarge, "xxlarge": $xxlarge, "xxxlarge": $xxxlarge);
+
+/**
+ * Animation
+ */
+$hard-ease-in: cubic-bezier(0.86, 0, 0.7, 1);
+$transition-all: all 0.23s $hard-ease-in;
+
+/**
+ * Border Styles
+ */
+$border-radius-curve: 2px;
+$border-radius-curve--hard: 4px;
+$border--standard: 1px solid $c-border;
+$border--standard-light: 2px solid $c-gray--light;
+$box-shadow--standard: 0 4px 12px rgba($c-black, 0.05);
+$box-shadow--thick: 0 8px 24px rgba($c-black, 0.2);
+
+/**
+ * Default Spacing/Padding
+ * Maintain a spacing system divisible by 10
+ */
+$space: 20px;
+$space-quarter: $space / 4;
+$space-half: $space / 2;
+$space-and-half: $space * 1.5;
+$space-double: $space * 2;
+$space-double-half: $space * 2.5;
+$space-triple: $space * 3;
+$space-quad: $space * 4;
+
+/* P72 Custom Spacing */
+$space-1: 20px;
+$space-2: 40px;
+$space-3: 64px;
+$space-4: 80px;
+$space-5: 128px;
+$space-6: 160px;
+
+/**
+ * Font Sizes
+ */
+
+/**
+ * Native Custom Properties
+ */
+:root {
+  font-size: 16px;
+
+  --font-size-s: 0.75rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.25rem;
+  --font-size-xl: 1.75rem;
+  --font-size-2xl: 2.125rem;
+  --font-size-3xl: 2.875rem;
+  --font-size-4xl: 4rem;
+  --font-size-5xl: 10rem;
+  --font-size-6xl: 12.5rem;
+}
+
+// Medium Breakpoint
+@media screen and (min-width: 768px) {
+  :root {
+    font-size: 16px;
+
+  --font-size-s: 0.75rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.25rem;
+  --font-size-xl: 1.75rem;
+  --font-size-2xl: 2.125rem;
+  --font-size-3xl: 2.875rem;
+  --font-size-4xl: 4rem;
+  --font-size-5xl: 10rem;
+  --font-size-6xl: 12.5rem;
+  }
+}
+
+$body-font-size: var(--body-font-size, 1rem);
+$font-size-s: var(--font-size-s, 0.75rem);
+$font-size-m: var(--font-size-m, 1rem);
+$font-size-l: var(--font-size-l, 1.25rem);
+$font-size-xl: var(--font-size-xl, 1.75rem);
+$font-size-2xl: var(--font-size-2xl, 2.125rem);
+$font-size-3xl: var(--font-size-3xl, 2.875rem);
+$font-size-4xl: var(--font-size-4xl, 4rem);
+$font-size-5xl: var(--font-size-5xl, 10rem);
+$font-size-6xl: var(--font-size-6xl, 12.5rem);

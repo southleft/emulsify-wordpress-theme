@@ -1,0 +1,83 @@
+.u-color--black,
+.u-color--black a {
+  color: $c-black;
+}
+
+.u-color--gray,
+.u-color--gray a {
+  color: $c-gray;
+}
+
+.u-color--gray--light,
+.u-color--gray--light a {
+  color: $c-gray--light;
+}
+
+.u-color--white,
+.u-color--white a {
+  color: $c-white !important;
+}
+
+.u-color--primary {
+  color: $c-primary;
+}
+
+.u-color--secondary {
+  color: $c-secondary;
+}
+
+.u-color--tertiary {
+  color: $c-tertiary;
+}
+
+/**
+ * Background Colors
+ */
+.u-background-color--none {
+  background: none;
+}
+
+.u-background-color--black {
+  background-color: $c-black;
+}
+
+.u-background-color--gray {
+  background-color: $c-gray;
+}
+
+.u-background-color--gray--light {
+  background-color: $c-gray--light;
+}
+
+.u-background-color--white {
+  background-color: $c-white;
+}
+
+.u-background-color--blue {
+  background-color: $c-blue;
+}
+
+.u-background-color--blue--alt {
+  background-color: $c-blue--alt;
+}
+
+/**
+ * SVG Fill Colors
+ */
+.u-path-fill--black {
+  path {
+    fill: $c-black;
+  }
+}
+
+.u-path-fill--gray {
+  path {
+    fill: $c-gray;
+  }
+}
+
+.u-path-fill--white {
+  path {
+    fill: $c-white;
+  }
+}

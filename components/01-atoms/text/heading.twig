@@ -1,0 +1,9 @@
+<h{{ content.heading.level | default('2') }} class="{{ content.heading.classes | default('o-heading') }}">
+  {% if content.heading.url %}
+    <a href="{{ content.heading.url }}" class="{{ content.heading.url_classes | default('o-heading__link') }}">
+      {{ content.heading.title }}
+    </a>
+  {% else %}
+    {{ content.heading.title }}
+  {% endif %}
+</h{{ content.heading.level | default('2') }}>

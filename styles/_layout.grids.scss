@@ -1,0 +1,183 @@
+/* ------------------------------------ *\
+    $GRIDS
+\* ------------------------------------ */
+
+.l-grid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-column-gap: $space;
+  grid-row-gap: $space;
+
+  @media all and (-ms-high-contrast: none) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -$space;
+    margin-right: -$space;
+
+    > * {
+      margin: $space;
+    }
+  }
+
+  &-item {
+    position: relative;
+  }
+
+  &--items-center &-item {
+    align-self: center;
+    justify-self: center;
+  }
+
+
+  &--2up {
+    @include screen-sm-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    @media all and (-ms-high-contrast: none) {
+      > * {
+        width: calc(50% - #{$space-double});
+      }
+    }
+
+    &--flex {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 calc(#{$space} * -1);
+
+      > * {
+        width: 100%;
+        padding-left: $space;
+        padding-right: $space;
+        margin-top: $space * 2;
+
+        @include screen-sm-up {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &--3up {
+    @include screen-sm-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    @include  screen-lg-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    @media all and (-ms-high-contrast: none) {
+      > * {
+        width: calc(33.333% - #{$space-double});
+      }
+    }
+  }
+
+  &--3up--all {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--4up {
+    grid-template-columns: repeat(minmax(200px, 1fr));
+
+    @include screen-sm-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    @include screen-md-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    @include screen-xl-up {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+
+    @media all and (-ms-high-contrast: none) {
+      > * {
+        width: calc(25% - #{$space-double});
+      }
+    }
+  }
+
+  &--4up--at-medium {
+    grid-template-columns: repeat(2, 1fr);
+
+    @include screen-sm-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    @include screen-md-up {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+
+    @media all and (-ms-high-contrast: none) {
+      > * {
+        width: calc(25% - #{$space-double});
+      }
+    }
+  }
+
+  &--posts {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: $space;
+
+    @media all and (-ms-high-contrast: none) {
+      > * {
+        width: calc(50% - #{$space-double});
+      }
+    }
+
+    @include screen-md-up {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: $space-triple;
+      grid-row-gap: $space-triple;
+
+      @media all and (-ms-high-contrast: none) {
+        > * {
+          width: calc(50% - #{$space-double});
+        }
+      }
+    }
+
+    @include screen-lg-up {
+      grid-template-columns: repeat(4, 1fr);
+
+      @media all and (-ms-high-contrast: none) {
+        > * {
+          width: calc(25% - #{$space-double});
+        }
+      }
+    }
+  }
+
+  &--5up {
+    grid-row-gap: $space * 2;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+
+    @include screen-lg-up {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+
+    @media all and (-ms-high-contrast: none) {
+      > * {
+        width: calc(20% - #{$space-double});
+      }
+    }
+  }
+}
+
+
+ul.l-grid {
+  list-style: none;
+}

@@ -1,0 +1,92 @@
+/* ------------------------------------ *\
+    $HELPER/TRUMP CLASSES
+\* ------------------------------------ */
+
+/**
+ * Completely remove from the flow but leave available to screen readers.
+ */
+.is-vishidden,
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/**
+ * Hide elements only present and necessary for js enabled browsers.
+ */
+.no-js .no-js-hide {
+  display: none;
+}
+
+.u-full-width {
+  width: 100%;
+}
+
+.u-align-center {
+  text-align: center;
+}
+
+.u-reversed-out {
+  color: $c-white;
+
+  p,
+  h1 a,
+  h2 a,
+  h3 a {
+    color: $c-white;
+  }
+}
+
+/**
+ * Remove all margins/padding
+ */
+.u-no-spacing {
+  padding: 0;
+  margin: 0;
+}
+
+/**
+ * Active on/off states
+ */
+.u-active--off {
+  display: none;
+}
+
+[class*="-is-active"].js-toggle-parent,
+[class*="-is-active"].js-toggle {
+  .u-active--on {
+    display: none;
+  }
+
+  .u-active--off {
+    display: block;
+  }
+}
+
+[class*="-is-active"] {
+  .u-hide-on-active {
+    display: none;
+  }
+}
+
+/**
+ * Breakout content
+ */
+.u-breakout {
+  margin-right: -$space;
+  margin-left: -$space;
+}
+
+.u-auto-margin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.u-padding--qtr--bottom {
+  padding-bottom: 5px;
+}

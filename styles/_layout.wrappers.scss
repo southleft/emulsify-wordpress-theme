@@ -1,0 +1,72 @@
+/* ------------------------------------ *\
+    $WRAPPERS & CONTAINERS
+\* ------------------------------------ */
+
+/**
+ * Wrapping element to keep content contained and centered.
+ */
+.l-wrap {
+  margin: 0 auto;
+  //  GLOBAL PADDING HERE
+  //padding-left: $space;
+  //padding-right: $space;
+  width: 100%;
+  position: relative;
+  padding-top: $space-quad;
+
+  @include screen-md-up {
+    padding-top: $space-quad + $space;
+  }
+}
+
+/**
+ * Layout containers - keep content centered and within a maximum width. Also
+ * adjusts left and right padding as the viewport widens.
+ */
+
+.l-container {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-left: $space-and-half;
+  padding-right: $space-and-half;
+
+  &--xl {
+    max-width: $max-width-xl;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $space-and-half;
+    padding-right: $space-and-half;
+  }
+
+  @include screen-lg-up {
+    padding-left: $space-triple;
+    padding-right: $space-triple;
+  }
+}
+
+/* Breakout Container: to go full browser width when in a parent container */
+
+.l-breakout {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+
+/**
+ * Grid classes
+ */
+@for $i from 1 through $grid-columns {
+  .l-container--#{$i}col {
+    @if $i == 1 {
+      max-width: $col-width * $i + $gutter * $i + px;
+    }
+    @else if $i == 2 {
+      max-width: $col-width * $i + $gutter * 1 + px;
+    }
+    @else {
+      max-width: $col-width * $i + $gutter * ($i - 2) + px;
+    }
+  }
+}

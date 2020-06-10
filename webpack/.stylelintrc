@@ -9,7 +9,12 @@
         "if",
         "each",
         "content",
-        "import"
+        "import",
+        "for",
+        "else",
+        "at-root",
+        "function",
+        "return"
       ]
     }],
     "no-descending-specificity": null,

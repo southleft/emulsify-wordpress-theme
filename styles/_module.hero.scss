@@ -1,0 +1,25 @@
+.c-hero {
+
+  &--home {
+    padding-top: $space-3;
+    padding-left: $space-6;
+    padding-bottom: 160px;
+    //background-image: url(../img/bg-rings.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+
+    p {
+      font-family: $ff-font--monospace;
+    }
+
+    h1 {
+      margin-top: $space-2;
+      font-family: $ff-font--monospace;
+      line-height: 0.85;
+
+      & span {
+        display: block;
+      }
+    }
+  }
+}

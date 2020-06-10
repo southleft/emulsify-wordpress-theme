@@ -1,0 +1,69 @@
+{% extends "base.twig" %}
+{% set body_class = 'front-page u-background-color--blue' %}
+{% set on_dark, logo, icon_fill = 'on-dark', 'light', 'u-fill--white' %}
+
+{% block content %}
+  <div bp="grid container">
+    <div bp="offset-2 9">
+      <div class="c-hero c-hero--home">
+        <p><span class="u-font--m"><span data-ani-id="home-forget" class="u-color--primary">Forget self driving.</span> <span data-ani-id="home-next-gen">The next-generation business is</span></span></p>
+        <h1 class="u-font--5xl u-font-weight--normal">
+          <span class="home-wrapper"><span data-ani-id="home-self" class="u-color--primary">self</span></span>
+          <span class="home-wrapper"><span data-ani-id="home-learning">learning</span></span>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div id="home-bq-links" class="l-breakout o-split" data-ani-id="home-bq-links">
+    <img class="o-split__image" data-ani-id="home-subhero" src="{{ image_path }}/home-subhero.jpg" alt="">
+    <div class="l-flex--middle o-blockquote o-blockquote--links o-blockquote--on-dark">
+      <div class="o-blockquote__text">
+        <p data-quote><span data-ani-id="home-quote-1">We marry</span> <a data-ani-id="home-quote-2" href="#">tech startups</a> <span data-ani-id="home-quote-3">with established companies to create</span> <a data-ani-id="home-quote-4" href="#">model-driven businesses.</a> <a data-ani-id="home-quote-5" href="#">Predictive algorithms</a> <span data-ani-id="home-quote-6">power key decisions and adapt with astonishing speed and</span> <a data-ani-id="home-quote-7" href="#">scale.</a></p>
+      </div>
+    </div>
+  </div>
+
+<div class="l-breakout o-blockquote--rings">
+  <div class="o-blockquote o-blockquote--on-dark o-blockquote--has-icon">
+    <div class="o-blockquote__text" bp="grid container">
+      <div class="o-blockquote__icon" data-ani-id="home-quote-icon" bp="1">
+        {% include "@atoms/icons/quote.twig" %}
+      </div>
+      <p class="o-blockquote__quote" data-ani-id="home-quote-software" bp="10">
+        If software ate the world. models will run it. Models improve products, products get used more, this new data improves the product even more. This creates a near-frictionless process of continuous improvement.
+      </p>
+    </div>
+    <div class="o-blockquote__cite" bp="grid container">
+      <div bp="offset-2 3" class="o-blockquote__person" data-ani-id="home-steve-cohen">
+        <img src="{{ image_path }}/icon-steve-cohen.png" alt="Steve Cohen">
+        <p>Steve Cohen <span>Lead Investor</span></p>
+      </div>
+      <div bp="3" class="o-blockquote__person" data-ani-id="home-steve-cohen">
+        <img src="{{ image_path }}/icon-matthew-granade.png" alt="Matthew Granade">
+        <p>Matthew Granade <span>Managing Partner</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% 
+  include "@molecules/blocks/content.twig"
+  with {
+    content: {
+      grid_modifiers: 'vertical-center',
+      type: 'callout',
+      col: '6',
+      image: 'home-callout-1.jpg',
+      button: 'Learn More',
+      bgcolor: ['u-background-color--blue', 'u-background-color--white'],
+      color: ['u-color--white'],
+      copy: 'Lorem ipsum.',
+      heading: {
+        level: '2',
+        title: 'My Title Here',
+      }
+    }
+  }
+%}
+
+{% endblock %}

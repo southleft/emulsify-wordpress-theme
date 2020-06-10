@@ -1,0 +1,84 @@
+/* ------------------------------------ *\
+    $BUTTONS
+\* ------------------------------------ */
+
+@mixin o-button {
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: $border-radius-curve;
+  font-size: $font-size-s;
+  font-family: $ff-font--primary;
+  text-align: center;
+  line-height: 1;
+  white-space: nowrap;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  //padding: $space $space-double;
+  padding: 1rem 1.5rem;
+  font-weight: 900;
+}
+
+/**
+ * Button Primary
+ */
+@mixin o-button--primary {
+  background-color: $c-primary;
+  color: $c-white;
+  filter: brightness(100%);
+
+  &:hover,
+  &:focus {
+    background-color: $c-button-primary-hover;
+    color: $c-white;
+    border-color: $c-button-primary-hover;
+  }
+}
+
+.o-button--primary {
+  @include o-button;
+  @include o-button--primary;
+}
+
+.o-button--primary--ghost {
+  @include o-button;
+  @include o-button--primary;
+
+  background-color: transparent;
+  border: 1px solid $c-primary;
+  color: $c-primary;
+
+  &:hover,
+  &:focus {
+    background-color: $c-primary;
+    border-color: $c-primary;
+  }
+}
+
+/**
+ * Button Secondary
+ */
+@mixin o-button--secondary {
+  background-color: $c-secondary;
+  color: $c-white;
+  filter: brightness(100%);
+
+  &:hover,
+  &:focus {
+    background-color: $c-button-primary-hover;
+  }
+}
+
+.o-button--secondary {
+  @include o-button;
+  @include o-button--secondary;
+}
+
+.o-button--full-width {
+  @include screen-md-down {
+    width: 100%;
+  }
+}

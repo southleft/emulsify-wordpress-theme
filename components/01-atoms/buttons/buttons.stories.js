@@ -1,22 +1,15 @@
 import React from 'react';
 
-import Button from './react/Button.component';
+import button from './button.twig';
 
-import button from './twig/button.twig';
-
-import buttonData from './twig/button.yml';
-import buttonAltData from './twig/button-alt.yml';
-import buttonAlt2Data from './twig/button-alt2.yml';
+import buttonData from './button.yml';
+import buttonAltData from './button-alt.yml';
+import buttonAlt2Data from './button-alt2.yml';
 
 /**
  * Storybook Definition.
  */
-export default {
-  component: Button,
-  title: 'Atoms/Button',
-};
-
-export const react = () => <Button>React Button</Button>;
+export default { title: 'Atoms/Button' };
 
 export const twig = () => (
   <div dangerouslySetInnerHTML={{ __html: button(buttonData) }} />

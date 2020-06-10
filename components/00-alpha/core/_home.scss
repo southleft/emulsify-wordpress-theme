@@ -1,0 +1,129 @@
+.c-hero {
+  &--home {
+    padding-top: $space-3;
+    padding-left: $space-6;
+    padding-bottom: 160px;
+    //background-image: url(../img/bg-rings.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+
+    p {
+      font-family: $ff-font--monospace;
+    }
+
+    h1 {
+      margin-top: $space-2;
+      font-family: $ff-font--monospace;
+      line-height: 0.85;
+
+      & span {
+        display: block;
+      }
+    }
+  }
+}
+
+.o-split {
+  position: relative;
+  clip-path: polygon(0% 0%, 50% 0%, 50% 7%, 100% 7%, 100% 100%, 50% 100%, 50% 93%, 0% 93%);
+  background-color: $c-blue;
+  max-height: 650px;
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-25%);
+  }
+
+  .o-blockquote {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &--on-dark {
+      color: $c-white;
+    }
+  }
+
+  .o-blockquote__text {
+    width: $max-width;
+    margin: 0 auto;
+
+    @at-root .front-page .o-blockquote--links .o-blockquote__text p {
+      max-width: 670px;
+      margin-left: 210px;
+      font-family: $ff-font--secondary;
+      font-size: $font-size-xl;
+      font-weight: 300;
+      line-height: 1.8;
+
+      &.is-active {
+        filter: opacity(0.5);
+      }
+
+      a {
+        color: $c-white;
+        text-decoration: none;
+        border-bottom: 1px solid $c-white;
+        padding-bottom: 2px;
+
+        &:hover {
+          border-color: $c-wintermint;
+        }
+      }
+    }
+  }
+}
+
+.front-page .o-blockquote--rings {
+  padding-top: $space-6 + $space-6;
+  padding-bottom: $space-6 + $space-6;
+
+  p.o-blockquote__quote {
+    position: relative;
+    margin-top: $space;
+    margin-bottom: $space-5;
+    font-family: $ff-font--primary;
+    font-style: italic;
+    font-size: $font-size-xl;
+    font-weight: 300;
+    line-height: 2;
+    width: 83%;
+  }
+
+  .o-blockquote__cite {
+    padding-left: 30px;
+    position: relative;
+  }
+
+  .o-blockquote__person img,
+  .o-blockquote__person p {
+    display: inline-block;
+    position: relative;
+  }
+
+  .o-blockquote__person img {
+    margin-right: $space-1;
+  }
+
+  .o-blockquote__person p {
+    font-family: $ff-font--secondary;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .o-blockquote__person span {
+    display: block;
+    font-family: 'NeueMachina', monospace;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: $c-periwinkle;
+  }
+}

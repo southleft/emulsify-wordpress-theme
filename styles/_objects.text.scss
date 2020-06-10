@@ -1,0 +1,365 @@
+/* ------------------------------------ *\
+    $TEXT TYPES
+\* ------------------------------------ */
+
+/**
+ * Font Families
+ */
+.u-font {
+  font-family: $ff-font;
+}
+
+.u-font--primary,
+.u-font--primary p {
+  font-family: $ff-font--primary;
+}
+
+.u-font--secondary,
+.u-font--secondary p {
+  font-family: $ff-font--secondary;
+}
+
+/**
+ * Text Sizes
+ */
+
+.u-font--xs {
+  font-size: $font-size-s;
+}
+
+.u-font--s {
+  font-size: $font-size-s;
+}
+
+.u-font--m {
+  font-size: $font-size-m;
+}
+
+.u-font--l {
+  font-size: $font-size-l;
+}
+
+.u-font--xl {
+  font-size: $font-size-xl;
+}
+
+.u-font--2xl {
+  font-size: $font-size-2xl;
+}
+
+.u-font--3xl {
+  font-size: $font-size-3xl;
+}
+
+.u-font--4xl {
+  font-size: $font-size-4xl;
+}
+
+.u-font--5xl {
+  font-size: $font-size-5xl;
+}
+
+.u-font--6xl {
+  font-size: $font-size-6xl;
+}
+
+
+/**
+ * Text Transforms
+ */
+.u-text-transform--upper {
+  text-transform: uppercase;
+}
+
+.u-text-transform--lower {
+  text-transform: lowercase;
+}
+
+/**
+ * Text Styles
+ */
+.u-text-style--italic {
+  font-style: italic;
+}
+
+.u-font-weight--light {
+  font-weight: 300;
+}
+
+.u-font-weight--normal {
+  font-weight: normal;
+}
+
+.u-font-weight--bold,
+.u-font-weight--900 {
+  font-weight: 900;
+}
+
+/**
+ * Text Positioning
+ */
+.u-text--center,
+.u-align--center {
+  text-align: center;
+}
+
+.u-text--left,
+.u-align--left {
+  text-align: left;
+}
+
+.u-text--right,
+.u-align--right {
+  text-align: right;
+}
+
+/**
+ * Text Decorations
+ */
+.u-text-decoration--underline {
+  text-decoration: underline;
+}
+
+/**
+ * Rich text editor text
+ */
+.o-rte-text {
+  width: 100%;
+  margin: 0 auto;
+
+  & > * + * {
+    margin-top: $space;
+  }
+
+  > dl dd,
+  > dl dt,
+  > ol li,
+  > ul li,
+  > p {
+    @include p;
+
+    line-height: 1.8;
+  }
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    padding-top: $space;
+    margin-bottom: -$space-half;
+  }
+
+  h2:empty,
+  h3:empty,
+  p:empty {
+    display: none;
+  }
+
+  // Heading + subheading lockup
+  > h2 + h3 {
+    margin-top: 0;
+    padding-top: $space-half;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  hr {
+    margin-top: $space-double;
+    margin-bottom: $space-double;
+  }
+
+  code,
+  pre {
+    font-size: 125%;
+  }
+
+  ol,
+  ul {
+    padding-left: 0;
+    margin-left: 0;
+
+    li {
+      list-style: none;
+      padding-left: 34px;
+      margin-left: 0;
+      margin-bottom: $space-half;
+      position: relative;
+      line-height: 1.5rem;
+
+      &::before {
+        color: $c-black;
+        width: 10px;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        font-size: inherit;
+        line-height: 1;
+        top: 4px;
+      }
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+
+  ol {
+    counter-reset: item;
+
+    li {
+      &::before {
+        content: counter(item) ". ";
+        counter-increment: item;
+      }
+
+      li {
+        counter-reset: item;
+
+        &::before {
+          content: '\002010';
+        }
+      }
+    }
+  }
+
+  ul {
+    li {
+      &::before {
+        content: '\002022';
+      }
+
+      li {
+        &::before {
+          content: '\0025E6';
+        }
+      }
+    }
+  }
+}
+
+.o-split {
+  position: relative; 
+  clip-path: polygon(0% 0%, 50% 0%, 50% 7%, 100% 7%, 100% 100%, 50% 100%, 50% 93%, 0% 93%);
+  background-color: $c-blue;
+  max-height: 650px;
+  
+  &__image {
+    position: relative;
+    width:100%;
+    height: 100%;
+    transform: translateY(-25%); 
+  }
+
+  .o-blockquote {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &--on-dark {
+      color: $c-white;
+    }
+  }
+
+  .o-blockquote__text {
+    width: $max-width;
+    margin: 0 auto;
+
+    @at-root .home .o-blockquote--links .o-blockquote__text p {
+      max-width: 670px;
+      margin-left: 210px;
+      font-family: $ff-font--secondary;
+      font-size: $font-size-xl;
+      font-weight: 300;
+      line-height: 1.8;
+      
+
+      &.is-active {
+        filter: opacity(0.5);
+      }
+
+      a {
+        border-bottom: 1px solid $c-white;
+        padding-bottom: 2px;
+        
+        &:hover {
+          border-color: $c-wintermint;
+        }
+      }
+    }
+  }
+}
+
+.home .o-blockquote--rings {
+  padding-top: $space-6 + $space-6;
+  padding-bottom: $space-6 + $space-6;
+
+  .o-blockquote {
+    display: flex;
+  }
+
+  .o-blockquote__icon {
+    position: relative;
+    margin-left: -80px;
+    margin-right: 20px;
+  }
+
+  p.o-blockquote__quote {
+    position: relative;
+    margin-left: 30px;
+    margin-top: -60px;
+    margin-bottom: $space-5;
+    font-family: $ff-font--primary;
+    font-style: italic;
+    font-size: $font-size-xl;
+    font-weight: 300;
+    line-height: 1.8;
+    width: 83%;
+  }
+
+  .o-blockquote__cite {
+    padding-left: 30px;
+    position: relative;
+  }
+
+  .o-blockquote__person img,
+  .o-blockquote__person p {
+    display: inline-block;
+    position: relative;
+  }
+
+  .o-blockquote__person img {
+    margin-right: $space-1;
+  }
+
+  .o-blockquote__person p {
+    font-family: 'NeueMachina', monospace; 
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .o-blockquote__person span {
+    display: block;
+    font-family: 'NeueMachina', monospace;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: $c-periwinkle;
+}
+
+
+}
+
+.home-wrapper {
+  display: block;
+  overflow-y:hidden;
+  padding-top: 12px;
+}

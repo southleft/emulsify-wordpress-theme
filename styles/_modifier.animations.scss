@@ -1,0 +1,87 @@
+/* ------------------------------------ *\
+    $ANIMATIONS & TRANSITIONS
+\* ------------------------------------ */
+
+/**
+ * Transitions
+ */
+.has-trans {
+  transition: all 0.4s ease-in-out;
+}
+
+.has-trans--fast {
+  transition: all 0.1s ease-in-out;
+}
+
+.has-zoom {
+  overflow: hidden;
+
+  img {
+    transition: transform 0.3s ease-out;
+    transform: scale(1);
+  }
+
+  a:hover {
+    img {
+      transform: scale(1.03);
+    }
+  }
+}
+
+/**
+ * Fade Classes
+ */
+.has-fadeup {
+  opacity: 0;
+  transform: translate(0, 25px);
+  transition: all 0.6s ease-out 0.5s;
+}
+
+.fadeup,
+.has-fadeup.is-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.has-fadein {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.fadein {
+  opacity: 1;
+}
+
+// Fade image in after load.
+.lazyload,
+.lazyloading {
+  opacity: 0;
+  transform: translate(0, 25px);
+  transition: all 0.6s ease-out;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+// Bounce up and down.
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-3px);
+  }
+
+  80% {
+    transform: translateY(3px);
+  }
+}
+
+.u-ani--header {
+  opacity: 0;
+  transform: translateY(30px);
+}

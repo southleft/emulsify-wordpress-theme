@@ -1,0 +1,15 @@
+[#{$prefix}~='container'] {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  max-width: $container-width;
+}
+
+[#{$prefix}~='container-xl'] {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  max-width: $container-width-xl;
+}

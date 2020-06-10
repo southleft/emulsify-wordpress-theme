@@ -1,0 +1,43 @@
+/* ------------------------------------ *\
+    $SPACING
+\* ------------------------------------ */
+// CUSTOM P72 SCALE
+
+$space-1: 20px;
+$space-2: 40px;
+$space-3: 64px;
+$space-4: 80px;
+$space-5: 128px;
+$space-6: 160px;
+
+$scale-1: '--1';
+$scale-2: '--2';
+$scale-3: '--3';
+$scale-4: '--4';
+$scale-5: '--5';
+$scale-6: '--6';
+$scale-0: '--0';
+
+$for-all: false;
+$for-top: '-top';
+$for-bottom: '-bottom';
+$for-left: '-left';
+$for-right: '-right';
+
+$locations: $for-all, $for-top, $for-bottom, $for-right, $for-left;
+
+$spacing-map: (
+  $scale-1: $space-1, 
+  $scale-2: $space-2, 
+  $scale-3: $space-3, 
+  $scale-4: $space-4, 
+  $scale-5: $space-5, 
+  $scale-6: $space-6, 
+  $scale-0: 0
+);
+
+@include spacing($spacing-map, $locations);
+
+@include screen-md-up {
+  @include spacing($spacing-map, $locations, 'md-up');
+}
